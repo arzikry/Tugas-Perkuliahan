@@ -1,5 +1,5 @@
-# Defining our function as seidel which takes 3 arguments
-# as A matrix, Solution and B matrix
+# Defining our function as seidel which takes 2 arguments
+# as A matrix, dan B matrix
    
 def seidel(a, x ,b):
     #Finding length of a(3)       
