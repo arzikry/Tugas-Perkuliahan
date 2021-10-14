@@ -1,0 +1,45 @@
+# Mendefinisikan Fungsi
+def f(x):
+    return 2*x**3 - 4*x**2 - 24
+
+# Menerapkan Metode Bisection
+def bisection(x0,x1,e):
+    step = 1
+    print('\n\n*** IMPLEMENTASI METODE BISECTION ***')
+    condition = True
+    while condition:
+        x2 = (x0 + x1)/2
+        print('Iteration ke %d, x2 = %0.6f dan f(x2) = %0.6f' % (step, x2, f(x2)))
+
+        if f(x0) * f(x2) < 0:
+            x1 = x2
+        else:
+            x0 = x2
+
+        step = step + 1
+        condition = abs(f(x2)) > e
+
+    print('\nAkar yang Diperlukan adalah : %0.8f' % x2)
+
+
+# Bagian Masukan
+x0 = input('Tebakan Pertama: ')
+x1 = input('Tebakan Kedua: ')
+e = input('Kesalahan yang dapat ditoleransi: ')
+
+# Mengubah input menjadi float
+x0 = float(x0)
+x1 = float(x1)
+e = float(e)
+
+#Catatan: Anda dapat menggabungkan dua bagian di atas seperti ini
+# x0 = float(input('Tebakan Pertama: '))
+# x1 = float(input('Tebakan Kedua: '))
+# e = float(input('Kesalahan yang Dapat Ditoleransi: '))
+
+# Memeriksa Kebenaran nilai tebakan awal dan membagi dua
+if f(x0) * f(x1) > 0.0:
+    print('Nilai tebakan yang diberikan tidak mengurung root.')
+    print('Coba Lagi dengan nilai tebakan yang berbeda.')
+else:
+    bisection(x0,x1,e)
