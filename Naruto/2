@@ -1,0 +1,57 @@
+# Mendefinisikan Fungsi
+def f(x):
+    return 2*x**3 - 4*x**2 - 24
+
+# Mendefinisikan turunan dari fungsi
+def g(x):
+    return 6*x**2 - 8*x
+
+# Menerapkan Metode Newton Raphson
+
+def newtonRaphson(x0,e,N):
+    print('\n\n*** IMPLEMENTASI METODE NEWTON RAPHSON ***')
+    step = 1
+    flag = 1
+    condition = True
+    while condition:
+        if g(x0) == 0.0:
+            print('Bagi dengan nol kesalahan!')
+            break
+        
+        x1 = x0 - f(x0)/g(x0)
+        print('Iterasi ke %d, x1 = %0.6f dan f(x1) = %0.6f' % (step, x1, f(x1)))
+        x0 = x1
+        step = step + 1
+        
+        if step > N:
+            flag = 0
+            break
+        
+        condition = abs(f(x1)) > e
+    
+    if flag==1:
+        print('\nAkar yang diperlukan adalah: %0.8f' % x1)
+    else:
+        print('\nTidak Konvergen.')
+
+
+# Bagian Masukan
+x0 = input('Masukkan Tebakan: ')
+e = input('Kesalahan yang Dapat Ditoleransi: ')
+N = input('Langkah Maksimum: ')
+
+# Mengubah x0 dan e menjadi float
+x0 = float(x0)
+e = float(e)
+
+# Mengubah N menjadi bilangan bulat
+N = int(N)
+
+
+#Catatan: Anda dapat menggabungkan tiga bagian di atas seperti ini
+# x0 = float(input('Masukkan Tebakan: '))
+# e = float(input('Kesalahan yang Dapat Ditoleransi: '))
+# N = int(input('Langkah Maksimum: '))
+
+# Memulai Metode Newton Raphson
+newtonRaphson(x0,e,N)
