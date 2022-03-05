@@ -1,0 +1,17 @@
+%
+disp ('Andi Rachman Zikry')
+disp ('Menghitung Sudut antar Vektor')
+%
+% Vektor u dan Vektor v
+u = [ 8 6 ];
+v = [ 5 12 ];
+%
+% Hitung Panjang Vektor  dan Vektor V
+u_norm = norm (u);
+v_norm = norm (v);
+uv = dot (u,v);
+thetal = dot (u,v)/ ((u_norm) * (v_norm));
+theta = acosd (thetal);
+%
+% Tampilkan Hasil Perhitungan 
+fprintf ('Sudut antara Vektor u dan Vektor v = %10.5g \n',theta)
