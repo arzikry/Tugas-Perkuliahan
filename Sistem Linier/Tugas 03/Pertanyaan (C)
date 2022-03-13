@@ -1,5 +1,7 @@
-(Pertanyaan) Hitung panjang busur dari persamaan (3.8) dengan pendekatan polygonal, dimana interval  t  yakni : 0 ≤ t ≤ 2π !
-(Coding) dimulai dari baris ke 4, dengan perintah "clc"
+(Pertanyaan) 
+c. Hitung panjang busur dari persamaan (3.8) dengan pendekatan polygonal, dimana interval  t  yakni : 0 ≤ t ≤ 2π !
+----------------------------------------------------------------------------------------------------------------------------
+(Coding) dimulai dari baris ke 5, dengan perintah "clc"
 ----------------------------------------------------------------------------------------------------------------------------
 clc
 clear all
