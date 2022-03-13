@@ -1,0 +1,19 @@
+clc
+clear all
+close all
+close all hidden
+%
+t = 0.00 : 0.01 : 2*pi;
+f = 3 * cos(t);
+g = 3 * sin(t);
+h = 2 * t;
+%
+sum = 0;
+for j = 1 : 628;
+    df = f(j+1) - f(j);
+    dg = g(j+1) - g(j);
+    dh = h(j+1) - h(j);
+    dr = [df,dg,dh];
+    sum = sum + norm(dr);
+end
+fprintf ('Panjang Busur     = %10.5g \n',sum)
