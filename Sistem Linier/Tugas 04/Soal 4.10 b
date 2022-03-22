@@ -1,0 +1,27 @@
+(Soal 4.10 b)
+Dengan menggunakan Matlab, tentukan nilai maksimum dan nilai minimum serta posisi nilai maksimum dan nilai minimum dari fungsi yang dinyatakan dalam bentuk persamaan (4.35) berikut, 
+           (4.35)
+Untuk area tertutup yang dibatasi oleh persamaan (4.36) dan (4.37)
+           (4.36)
+           (4.37)
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+(Coding) dimulai dari baris ke 10, dengan perintah "clc"
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+clc
+clear all
+close all
+close all hidden
+%
+f = inline ('x*y + x*exp(-x.^2 - y.^2)','x','y');
+x =  0.0000 : 0.0200 : 1.0000;
+y = -0.5000 : 0.0200 : 0.5000;
+[X,Y] = meshgrid(x,y);
+[row_max,i_max] = max(f(X,Y));
+[max_f,max_j] = max(row_max);
+[row_min,i_min] = min(f(X,Y));
+[min_f,min_j] = min(row_max);
+%
+fprintf('Nilai Maksimum dari Fungsi f = %15.5g\n',max_f)
+fprintf('Nilai Maksimum berada Pada Posisi Ke = %7.5g\n',max_j)
+fprintf('Nilai Minimum dari Fungsi  f = %15.5g\n',min_f)
+fprintf('Nilai Minimum Berada Pada Posisi  Ke = %7.5g\n',min_j)
